@@ -1,0 +1,51 @@
+h1{
+  font-family: var(--font);
+  color: var(--fourth);
+  font-size: 56px;
+}
+h2{
+  font-family: var(--font);
+  color: var(--fourth);
+  font-size: 48px;
+}
+
+p{
+  font-family: var(--font);
+  color: var(--fourth);
+  font-size: 20px;
+}
+
+.header{
+  margin: 36px;
+}
+.component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+.heading-title{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.layout-1{
+  width: 100%;
+}
+.conti{
+  display: flex;
+  justify-content: space-between;
+  height: 582px;
+  margin-block: 24px;
+}
+.leftconti{
+  display: flex;
+  padding-block: 98px;
+  flex-direction: column;
+  max-width: 756px;
+  gap: 24px;
+}
+

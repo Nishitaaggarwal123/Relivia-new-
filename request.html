@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relivia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/request.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="navitems container">
+        <a href="index.html" id="logo">Relivia</a>
+      <ul id="navlinks">
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="recentrequest.html">Resent Request</a></li>
+        <li><a href="controlpannel.html">Control pannel</a></li>
+      </ul>
+      <a href="login.html" class="primary">login</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="help-header-card">
+    <div class="help-header-icon">💚</div>
+    <div class="help-header-title">Relivia Request Help</div>
+    <div class="help-header-desc">If you need emergency assistance during a disaster, fill out the form below. Our response teams will be notified immediately.</div>
+  </div>
+  <div class="help-main-panels">
+    <!-- Left: Form -->
+    <div class="help-form-panel">
+      <div class="help-form-header"><span class="form-icon"></span>Submit Help Request</div>
+      <form>
+        <label><span class="form-label-icon">&#128100;</span> Your Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+
+        <label><span class="form-label-icon">&#128222;</span> Phone or SMS Number</label>
+        <input type="text" placeholder="+1-555-0123" required>
+
+        <label><span class="form-label-icon">&#128205;</span> Your Location</label>
+        <input type="text" placeholder="Address or nearest landmark" required>
+        
+        <label>Type of Assistance Needed</label>
+        <select required>
+          <option>Food / Water / Supplies</option>
+          <option>Medical</option>
+          <option>Evacuation</option>
+          <option>Rescue</option>
+        </select>
+
+        <label>Priority Level</label>
+        <select required>
+          <option>Medium - Important</option>
+          <option>High - Immediate</option>
+          <option>Low - Routine</option>
+        </select>
+
+        <label>What do you need?</label>
+        <textarea placeholder="Please describe your situation and what help you need..." rows="2"></textarea>
+        <div class="help-desc-tip">
+          Be as specific as possible. Include number of people, medical conditions, or immediate dangers.
+        </div>
+        <button type="submit" class="help-submit-btn">Send Help Request</button>
+        <div class="help-form-note">
+          Your request will be immediately forwarded to emergency response teams in your area.
+        </div>
+      </form>
+    </div>
+    <!-- Right: Recent Requests -->
+    <div class="help-requests-panel">
+      <div class="help-requests-header">
+        Recent Help Requests
+        <button class="live-updates-btn">Live Updates</button>
+      </div>
+      <div class="help-requests-list">
+        <!-- Card: Pending -->
+        <div class="help-request-card card-high">
+          <div class="help-request-user">
+            <span class="req-user-icon">🏢</span>
+            <span class="req-user-name">Sarah Johnson</span>
+            <span class="req-user-phone">+1-555-0123</span>
+            <span class="help-priority help-badge badge-high">high</span>
+            <span class="help-status help-badge badge-pending">pending</span>
+          </div>
+          <div class="req-user-loc">&#128205; 123 Main St, Houston, TX</div>
+          <div class="req-details">Need emergency medical supplies, elderly parent with diabetes</div>
+          <div class="req-meta">
+            <span class="req-time">5 minutes ago</span>
+            <span class="help-type help-badge badge-medical">medical</span>
+          </div>
+        </div>
+        <!-- Card: Critical, Responding -->
+        <div class="help-request-card card-critical">
+          <div class="help-request-user">
+            <span class="req-user-icon">🏢</span>
+            <span class="req-user-name">Michael Chen</span>
+            <span class="req-user-phone">+1-555-0456</span>
+            <span class="help-priority help-badge badge-critical">critical</span>
+            <span class="help-status help-badge badge-responding">responding</span>
+          </div>
+          <div class="req-user-loc">&#128205; 456 Oak Ave, Miami, FL</div>
+          <div class="req-details">Trapped in building, water level rising, need evacuation</div>
+          <div class="req-meta">
+            <span class="req-time">12 minutes ago</span>
+            <span class="help-type help-badge badge-rescue">rescue</span>
+          </div>
+        </div>
+        <!-- Card: Medium, Completed -->
+        <div class="help-request-card card-medium">
+          <div class="help-request-user">
+            <span class="req-user-icon">🏢</span>
+            <span class="req-user-name">Emily Rodriguez</span>
+            <span class="req-user-phone">+1-555-0789</span>
+            <span class="help-priority help-badge badge-medium">medium</span>
+            <span class="help-status help-badge badge-completed">completed</span>
+          </div>
+          <div class="req-user-loc">&#128205; 789 Pine Rd, Phoenix, AZ</div>
+          <div class="req-details">Need food and water for 3 adults</div>
+          <div class="req-meta">
+            <span class="req-time">16 minutes ago</span>
+            <span class="help-type help-badge badge-food">food</span>
+          </div>
+        </div>
+      </div>
+      <div class="help-emergency-box">
+        <b>&#9888; Emergency Numbers</b><br>
+        <span class="help-emphasize">911</span> - Police, Fire, Ambulance <br>
+        <span class="help-emphasize" style="color:#ce3737;">311</span> - Non-Emergency Services <br>
+        <span class="help-emphasize" style="color:#ff6400;">1-800-RED-CROSS</span> - Disaster Relief
+      </div>
+    </div>
+  </div>
+    </section>
+  </main>
+  <footer></footer>
+</body>
+</html>

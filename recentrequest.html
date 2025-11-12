@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    let userName = sessionStorage.getItem("userName");
+    let password = sessionStorage.getItem("password");
+    if (userName === null && password === null) {
+      window.location = "login.html";
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relivia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/report.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navitems container">
+        <a href="index.html" id="logo">Relivia</a>
+      <ul id="navlinks">
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="recentrequest.html">Resent Request</a></li>
+        <li><a href="controlpannel.html">Control pannel</a></li>
+      </ul>
+      <a href="login.html" class="primary">logout</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="report-container container">
+  <div class="report-header">
+    <h1>Report</h1>
+    <div class="report-header-actions">
+      <span class="report-admin-btn"><span class="admin-icon">👤</span> Admin</span>
+      <span class="report-status-badge">✓ System Active</span>
+    </div>
+  </div>
+  <div class="report-search-row">
+    <input type="text" class="report-search" placeholder="Search requests...">
+    <select class="report-select">
+      <option>All Sources</option>
+      <option>Phone</option>
+      <option>SMS</option>
+      <option>NGO</option>
+    </select>
+    <select class="report-select">
+      <option>Severity</option>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+    <button class="report-verified"><span class="star-icon">⭐</span> Verified Only</button>
+  </div>
+  <div class="report-card">
+    <div class="report-table-title">
+      <span class="msg-table-icon">✉️</span>
+      <span class="table-title">Requests</span>
+    </div>
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Source</th>
+          <th>User / Recipient</th>
+          <th>Date/Time</th>
+          <th>Status</th>
+          <th>Actions</th>
+          <th>Severity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body is empty per the screenshot.
+        Populate rows here as needed. -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    </section>
+  </main>
+  <footer></footer>
+</body>
+</html>

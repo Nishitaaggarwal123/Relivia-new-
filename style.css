@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --background : #F1F7F7;
+  --first: #00DF82;
+  --second: #2CC295;
+  --third: #03624C;
+  --fourth: #042222;
+  --five: #021A1A;
+  --font: Nunito;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--background);
+
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* --/ navbar \-- */
+
+.navitems {
+  padding-block: 1rem;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo{
+  font-size: 48px;
+  font-weight: bolder;
+  font-family: var(--font);
+  color: var(--fourth);
+}
+
+#navlinks {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  font-family: var(--font);
+  font-size: 20px;
+}
+
+#navlinks a {
+  color: var(--fourth);      
+  text-decoration: none;
+}
+
+ul a {
+  text-decoration: none;
+  position: relative;
+}
+
+ul a::before,
+ul a::after {
+  content: "";
+  position: absolute;
+  background-color: var(--second);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  transition: width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+ul a::before {
+  left: 0;
+}
+
+ul a::after {
+  right: 0;
+}
+
+ul a:hover::before,
+ul a:hover::after {
+  width: 100%;
+}
+
+/* --\ navbar /-- */
+
+
+/* --/ Buttons \-- */
+
+.primary{
+  font-family: var(--font);
+  display: inline-block;
+  font-size: 16px;
+  color: var(--background);
+  padding-block: 12px;
+  padding-inline: 20px;
+  border-radius: 8px;
+  /* background: linear-gradient(180deg,rgba(42, 123, 155, 1) 0%, rgba(0, 223, 130, 1) 0%, rgba(3, 98, 76, 1) 100%); */
+  background-color: var(--second);
+}
+
+/* --\ Buttons /-- */
+
+
+/* --/ Fotter \-- */
+/* .main-footer {
+  width: 100%;
+  background: #f7fafd;
+  color: var(--third);
+  font-family: var(--font);
+  font-size: 1.03em;
+  margin-top: 36px;
+  border-top: 1.5px solid var(--third);
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 27px 25px 17px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.footer-brand {
+  font-weight: 700;
+  color: var(--fourth);
+  font-size: 48px;
+  letter-spacing: .01em;
+}
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+.footer-links a {
+  color: var(--five);
+  text-decoration: none;
+  margin: 0 4px;
+  font-weight: 500;
+  transition: color .14s;
+}
+.footer-links a:hover {
+  color: #183c75;
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 24px 12px 13px 12px;
+  }
+  .footer-info { gap: 8px; }
+} */
+
+/* --\ Fotter /-- */
+

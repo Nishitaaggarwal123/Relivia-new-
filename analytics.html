@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    let userName = sessionStorage.getItem("userName");
+    let password = sessionStorage.getItem("password");
+    if (userName === null && password === null) {
+      window.location = "login.html";
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relivia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/analytics.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="navitems container">
+        <a href="index.html" id="logo">Relivia</a>
+      <ul id="navlinks">
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="recentrequest.html">Resent Request</a></li>
+        <li><a href="controlpannel.html">Control pannel</a></li>
+      </ul>
+      <a href="login.html" class="primary">logout</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="dashboard container">
+
+        <!-- Metrics -->
+        <div class="grid-4">
+          <div class="card">
+            <div class="card-header">Total Incidents</div>
+            <div style="font-size: 22px; font-weight: bold;">1,247</div>
+            <p style="font-size: 13px; color: gray;">+12% from last month</p>
+          </div>
+          <div class="card">
+            <div class="card-header">Avg Response Time</div>
+            <div style="font-size: 22px; font-weight: bold;">14.5 min</div>
+            <p style="font-size: 13px; color: gray;">-2.3 min improvement</p>
+          </div>
+          <div class="card">
+            <div class="card-header">Verification Rate</div>
+            <div style="font-size: 22px; font-weight: bold;">78%</div>
+            <p style="font-size: 13px; color: gray;">+5% from last month</p>
+          </div>
+          <div class="card">
+            <div class="card-header">Active Locations</div>
+            <div style="font-size: 22px; font-weight: bold;">52</div>
+            <p style="font-size: 13px; color: gray;">Across 18 states</p>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">Disaster Frequency by Type</div>
+            <div class="chart-container"><canvas id="barChart"></canvas></div>
+          </div>
+          <div class="card">
+            <div class="card-header">Report Verification Status</div>
+            <div class="chart-container"><canvas id="pieChart"></canvas></div>
+          </div>
+          <div class="card">
+            <div class="card-header">Incident Trends Over Time</div>
+            <div class="chart-container"><canvas id="lineChart"></canvas></div>
+          </div>
+          <div class="card">
+            <div class="card-header">Average Response Time by Hour</div>
+            <div class="chart-container"><canvas id="responseChart"></canvas></div>
+          </div>
+        </div>
+
+        <!-- Location Heatmap as Table -->
+        <div class="card">
+          <div class="card-header">Incident Heatmap by Location</div>
+          <table>
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Incidents</th>
+                <th>Severity</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>California</td>
+                <td>125</td>
+                <td><span class="badge high">high</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:100%; background:#ef4444"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Florida</td>
+                <td>89</td>
+                <td><span class="badge medium">medium</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:71%; background:#f59e0b"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Texas</td>
+                <td>76</td>
+                <td><span class="badge medium">medium</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:61%; background:#f59e0b"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>New York</td>
+                <td>45</td>
+                <td><span class="badge low">low</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:36%; background:#22c55e"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Arizona</td>
+                <td>38</td>
+                <td><span class="badge medium">medium</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:30%; background:#f59e0b"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Colorado</td>
+                <td>32</td>
+                <td><span class="badge low">low</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:26%; background:#22c55e"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Washington</td>
+                <td>28</td>
+                <td><span class="badge low">low</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:22%; background:#22c55e"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Oregon</td>
+                <td>25</td>
+                <td><span class="badge medium">medium</span></td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:20%; background:#f59e0b"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+  <script>
+    // Disaster Frequency (Bar)
+    new Chart(document.getElementById("barChart"), {
+      type: "bar",
+      data: {
+        labels: ["Fire", "Flood", "Earthquake", "Storm", "Landslide"],
+        datasets: [
+          { label: "This Month", data: [45, 32, 18, 28, 12], backgroundColor: "#ef4444" },
+          { label: "Last Month", data: [38, 41, 15, 22, 8], backgroundColor: "#94a3b8" }
+        ]
+      },
+      options: { maintainAspectRatio: false }
+    });
+
+    // Verification (Pie)
+    new Chart(document.getElementById("pieChart"), {
+      type: "pie",
+      data: {
+        labels: ["Verified", "Pending", "Unverified"],
+        datasets: [{
+          data: [78, 15, 7],
+          backgroundColor: ["#22c55e", "#f59e0b", "#ef4444"]
+        }]
+      },
+      options: { maintainAspectRatio: false }
+    });
+
+    // Trends (Line)
+    new Chart(document.getElementById("lineChart"), {
+      type: "line",
+      data: {
+        labels: ["Jan","Feb","Mar","Apr","May","Jun"],
+        datasets: [
+          { label: "Fires", data: [35,42,38,45,52,48], borderColor: "#fb923c", fill:false },
+          { label: "Floods", data: [28,35,42,32,38,45], borderColor: "#3b82f6", fill:false },
+          { label: "Earthquakes", data: [12,15,18,16,20,22], borderColor: "#ef4444", fill:false },
+          { label: "Storms", data: [20,25,30,28,35,40], borderColor: "#8b5cf6", fill:false }
+        ]
+      },
+      options: { maintainAspectRatio: false }
+    });
+
+    // Response Time (Bar)
+    new Chart(document.getElementById("responseChart"), {
+      type: "bar",
+      data: {
+        labels: ["00:00","04:00","08:00","12:00","16:00","20:00"],
+        datasets: [{
+          label: "Avg Response (min)",
+          data: [12,8,15,18,22,16],
+          backgroundColor: "#22c55e"
+        }]
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: { y: { title: { display: true, text: "Minutes" } } }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    let userName = sessionStorage.getItem("userName");
+    let password = sessionStorage.getItem("password");
+    if (userName === null && password === null) {
+      window.location = "login.html";
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relivia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/controlpannel.css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <script defer src="js/controlpannel.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="navitems container">
+        <a href="index.html" id="logo">Relivia</a>
+      <ul id="navlinks">
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="recentrequest.html">Resent Request</a></li>
+        <li><a href="controlpannel.html">Control pannel</a></li>
+      </ul>
+      <a href="login.html" class="primary">logout</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="container">
+        <div class="dashboard-main-container">
+        <div class="dashboard-header">
+          <div>
+            <h1>Admin Control Panel</h1>
+            <p>Manage alerts, communications, and monitor health risks</p>
+          </div>
+          <div class="right-user">
+            <span class="user-chip">Admin-001</span>
+            <span class="sys-chip sys-active">System Active</span>
+          </div>
+        </div>
+        <div class="dashboard-stats">
+          <div class="dashboard-stat">
+            <div class="stat-label">Total Alerts Sent</div>
+            <div class="stat-main stat-purple">1,847</div>
+            <div class="stat-desc">+124 from yesterday</div>
+          </div>
+          <div class="dashboard-stat">
+            <div class="stat-label">SMS Messages</div>
+            <div class="stat-main stat-blue">1,243</div>
+            <div class="stat-desc">87% response rate</div>
+          </div>
+          <div class="dashboard-stat">
+            <div class="stat-label">Phone Calls</div>
+            <div class="stat-main stat-green">604</div>
+            <div class="stat-desc">Avg: 4.2 min</div>
+          </div>
+          <div class="dashboard-stat">
+            <div class="stat-label">Active Recipients</div>
+            <div class="stat-main stat-orange">3,421</div>
+            <div class="stat-desc">12 pending requests</div>
+          </div>
+        </div>
+        <div class="dashboard-tabs">
+          <a class="dashboard-tab-link active" data-section="sms">SMS Alerts</a>
+          <a class="dashboard-tab-link" data-section="phone">Phone Requests</a>
+          <a class="dashboard-tab-link" data-section="ngo">NGO Resources</a>
+          <!-- <a class="dashboard-tab-link" data-section="disease">Disease Monitor</a> -->
+          <a class="dashboard-tab-link" data-section="alert">Alert Manager</a>
+        </div>
+        <div id="main-content"></div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <!-- <footer class="main-footer">
+  <div class="footer-content">
+    <span class="footer-brand">Relivia</span>
+    <span class="footer-info">
+      &copy; 2025 Relivia Project. All rights reserved.
+      <span class="footer-links">
+        <a href="about-us.html">About Us</a> · 
+        <a href="contact.html">Contact</a> · 
+        <a href="privacy.html">Privacy</a>
+      </span>
+    </span>
+  </div>
+</footer> -->
+</body>
+</html>

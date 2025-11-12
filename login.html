@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relivia Admin Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+  <script defer src="js/login.js"></script>
+</head>
+<body>
+  <div class="login-bg-accent"></div>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-logo">
+        <!-- <span class="login-logo-icon">🌱</span> -->
+        <span class="login-logo-text">Relivia Admin</span>
+      </div>
+      <div class="login-title">Admin Login</div>
+      <form>
+        <label for="userid">User ID</label>
+        <input type="text" id="userid" placeholder="Enter your admin ID" required autocomplete="username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
+
+        <div class="login-actions">
+          <label class="login-remember">
+            <input type="checkbox"> Remember me
+          </label>
+          <a class="login-link" href="#">Forgot Password?</a>
+        </div>
+        <button type="button" class="login-btn" onclick="login()">Login</button>
+      </form>
+      <div class="login-footer">
+        Having trouble? <a href="#">Contact support</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    let userName = sessionStorage.getItem("userName");
+    let password = sessionStorage.getItem("password");
+    if (userName === null && password === null) {
+      window.location = "login.html";
+    }
+  </script>
+  <title>Relivia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navitems container">
+        <a href="index.html" id="logo">Relivia</a>
+      <ul id="navlinks">
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="report.html">Resent Request</a></li>
+        <li><a href="controlpannel.html">Control pannel</a></li>
+      </ul>
+      <a href="login.html" class="primary" onclick="logOut()">log out</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="dashboard-container container">
+  <h1 class="dash-title">Dashboard</h1>
+  <div class="dash-subtitle">Real-time overview of relief operations and response status</div>
+  <div class="stats-section">
+    <div class="stat-card">
+      <div class="stat-num">24</div>
+      <div class="stat-label">Active Disasters</div>
+      <div class="stat-desc">+3 from last hour</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">18</div>
+      <div class="stat-label">Verified Reports</div>
+      <div class="stat-desc">75% verification rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Affected Locations</div>
+      <div class="stat-desc">Across 8 states</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">45.2k</div>
+      <div class="stat-label">People Affected</div>
+      <div class="stat-desc">Estimated impact</div>
+    </div>
+  </div>
+  <div class="map-card">
+    <div class="map-title">
+      <span class="map-pin" style="font-size: 1.1em;">📍</span>
+      <span><b>Live Disaster Map</b></span>
+    </div>
+    <div class="map-area">
+      <span class="marker fire" title="Fire" style="top: 38%; left: 24%;"></span>
+      <span class="marker danger" title="Danger" style="top: 80%; left: 43%;"></span>
+      <span class="marker flood" title="Flood" style="top: 64%; left: 60%;"></span>
+      <span class="marker verified" title="Verified" style="top: 32%; left: 77%;"></span>
+      <div class="legend-box">
+        <div class="legend-head">Legend</div>
+        <div class="legend-list">
+          <div class="legend-type"><span class="legend-dot danger"></span> Danger</div>
+          <div class="legend-type"><span class="legend-dot flood"></span> Flood</div>
+          <div class="legend-type"><span class="legend-dot fire"></span> Fire</div>
+          <div class="legend-type"><span class="legend-dot verified"></span> Verified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </section>
+  </main>
+  <footer></footer>
+</body>
+</html>
