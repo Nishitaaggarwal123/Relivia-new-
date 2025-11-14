@@ -23,7 +23,7 @@
         <li><a href="about-us.html">About us</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="analytics.html">Analytics</a></li>
-        <li><a href="recentrequest.html">Resent Request</a></li>
+        <li><a href="recentrequest.html">Recent Request</a></li>
         <li><a href="controlpannel.html">Control pannel</a></li>
       </ul>
       <a href="login.html" class="primary">logout</a>
@@ -46,7 +46,7 @@
       <option>All Sources</option>
       <option>Phone</option>
       <option>SMS</option>
-      <option>NGO</option>
+      <option>Web App</option>
     </select>
     <select class="report-select">
       <option>Severity</option>
@@ -73,7 +73,7 @@
           <th>Severity</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody  id="requestTableBody">
         <!-- Table body is empty per the screenshot.
         Populate rows here as needed. -->
       </tbody>
@@ -84,5 +84,7 @@
     </section>
   </main>
   <footer></footer>
+  <script src="js/load-request.js"></script>
+
 </body>
 </html>

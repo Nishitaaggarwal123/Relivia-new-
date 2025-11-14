@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/dashboard.css">
   <script defer src="js/script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 </head>
 <body>
   <header>
@@ -24,7 +26,7 @@
         <li><a href="about-us.html">About us</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="analytics.html">Analytics</a></li>
-        <li><a href="report.html">Resent Request</a></li>
+        <li><a href="recentrequest.html">Recent Request</a></li>
         <li><a href="controlpannel.html">Control pannel</a></li>
       </ul>
       <a href="login.html" class="primary" onclick="logOut()">log out</a>
@@ -58,7 +60,7 @@
       <div class="stat-desc">Estimated impact</div>
     </div>
   </div>
-  <div class="map-card">
+  <!-- <div class="map-card">
     <div class="map-title">
       <span class="map-pin" style="font-size: 1.1em;">📍</span>
       <span><b>Live Disaster Map</b></span>
@@ -78,11 +80,30 @@
         </div>
       </div>
     </div>
+  </div> -->
+  <div class="map-card">
+  <div class="map-title">
+    <span class="map-pin" style="font-size: 1.1em;">📍</span>
+    <span><b>Live Disaster Map</b></span>
   </div>
+
+  <!-- REAL LIVE MAP -->
+  <div id="weatherMap" style="
+    height: 420px; 
+    width: 100%; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    margin-top: 10px;">
+  </div>
+</div>
+
 </div>
 
     </section>
   </main>
   <footer></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/weather-map.js"></script>
+
 </body>
 </html>

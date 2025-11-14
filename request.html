@@ -14,14 +14,15 @@
     <nav>
       <div class="navitems container">
         <a href="index.html" id="logo">Relivia</a>
-      <ul id="navlinks">
-        <li><a href="about-us.html">About us</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
+      <!-- <ul id="navlinks">
+         <li><a href="about-us.html">About us</a></li> -->
+        <!-- <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="analytics.html">Analytics</a></li>
-        <li><a href="recentrequest.html">Resent Request</a></li>
-        <li><a href="controlpannel.html">Control pannel</a></li>
+        <li><a href="recentrequest.html">Recent Request</a></li>
+        <li><a href="controlpannel.html">Control pannel</a></li> -->
+        <!-- <li><a href="request.html">Request Help</a></li>
       </ul>
-      <a href="login.html" class="primary">login</a>
+      <a href="login.html" class="primary">login</a> --> 
       </div>
     </nav>
   </header>
@@ -36,18 +37,18 @@
     <!-- Left: Form -->
     <div class="help-form-panel">
       <div class="help-form-header"><span class="form-icon"></span>Submit Help Request</div>
-      <form>
+      <form id="requestform">
         <label><span class="form-label-icon">&#128100;</span> Your Name</label>
-        <input type="text" placeholder="Enter your full name" required>
+        <input  id="name" type="text" placeholder="Enter your full name" required>
 
         <label><span class="form-label-icon">&#128222;</span> Phone or SMS Number</label>
-        <input type="text" placeholder="+1-555-0123" required>
+        <input id="phone" type="text" placeholder="+1-555-0123" required>
 
         <label><span class="form-label-icon">&#128205;</span> Your Location</label>
-        <input type="text" placeholder="Address or nearest landmark" required>
+        <input id="location"type="text" placeholder="Address or nearest landmark" required>
         
         <label>Type of Assistance Needed</label>
-        <select required>
+        <select id="category"required>
           <option>Food / Water / Supplies</option>
           <option>Medical</option>
           <option>Evacuation</option>
@@ -55,14 +56,14 @@
         </select>
 
         <label>Priority Level</label>
-        <select required>
+        <select id="priority"required>
           <option>Medium - Important</option>
           <option>High - Immediate</option>
           <option>Low - Routine</option>
         </select>
 
         <label>What do you need?</label>
-        <textarea placeholder="Please describe your situation and what help you need..." rows="2"></textarea>
+        <textarea id="description"placeholder="Please describe your situation and what help you need..." rows="2"></textarea>
         <div class="help-desc-tip">
           Be as specific as possible. Include number of people, medical conditions, or immediate dangers.
         </div>
@@ -73,14 +74,14 @@
       </form>
     </div>
     <!-- Right: Recent Requests -->
-    <div class="help-requests-panel">
+    <!-- <div class="help-requests-panel">
       <div class="help-requests-header">
         Recent Help Requests
         <button class="live-updates-btn">Live Updates</button>
       </div>
       <div class="help-requests-list">
-        <!-- Card: Pending -->
-        <div class="help-request-card card-high">
+         Card: Pending -->
+        <!-- <div class="help-request-card card-high">
           <div class="help-request-user">
             <span class="req-user-icon">🏢</span>
             <span class="req-user-name">Sarah Johnson</span>
@@ -94,9 +95,9 @@
             <span class="req-time">5 minutes ago</span>
             <span class="help-type help-badge badge-medical">medical</span>
           </div>
-        </div>
+        </div> -->
         <!-- Card: Critical, Responding -->
-        <div class="help-request-card card-critical">
+        <!-- <div class="help-request-card card-critical">
           <div class="help-request-user">
             <span class="req-user-icon">🏢</span>
             <span class="req-user-name">Michael Chen</span>
@@ -110,9 +111,9 @@
             <span class="req-time">12 minutes ago</span>
             <span class="help-type help-badge badge-rescue">rescue</span>
           </div>
-        </div>
+        </div> -->
         <!-- Card: Medium, Completed -->
-        <div class="help-request-card card-medium">
+        <!-- <div class="help-request-card card-medium">
           <div class="help-request-user">
             <span class="req-user-icon">🏢</span>
             <span class="req-user-name">Emily Rodriguez</span>
@@ -127,7 +128,7 @@
             <span class="help-type help-badge badge-food">food</span>
           </div>
         </div>
-      </div>
+      </div> --> 
       <div class="help-emergency-box">
         <b>&#9888; Emergency Numbers</b><br>
         <span class="help-emphasize">911</span> - Police, Fire, Ambulance <br>
@@ -139,5 +140,7 @@
     </section>
   </main>
   <footer></footer>
+  <script src="js/submit-request.js"></script>
+
 </body>
 </html>
