@@ -30,11 +30,13 @@ const RequestSchema = new mongoose.Schema({
 
 const Request = mongoose.model("Request", RequestSchema);
 
+
 app.post("/api/requests", async (req, res) => {
   const newReq = new Request(req.body);
   await newReq.save();
   res.json({ message: "Request submitted successfully!" });
 });
+
 
 app.get("/api/requests", async (req, res) => {
   const requests = await Request.find().sort({ createdAt: -1 });
