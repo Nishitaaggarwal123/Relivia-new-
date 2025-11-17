@@ -1,40 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   // --- SMS Alerts Panel ---
   function renderSMSPanel() {
-    const smsLeft = `
-      <div class="sms-left">
-        <div class="sms-section-title">Send SMS Alert</div>
-        <form autocomplete="off">
-          <div class="sms-bulk-row">
-            <span class="sms-bulk-label">Bulk Mode</span>
-            <input type="checkbox" class="sms-switch" />
-          </div>
-          <div class="sms-row">
-            <label class="sms-label">Recipient</label>
-            <input type="text" class="sms-input" maxlength="15" placeholder="+1-555-0101">
-          </div>
-          <div class="sms-row">
-            <label class="sms-label">Alert Type</label>
-            <select class="sms-select">
-              <option>Emergency Alert</option>
-              <option>Weather Warning</option>
-            </select>
-          </div>
-          <div class="sms-row">
-            <label class="sms-label">Message Content</label>
-            <textarea class="sms-textarea" maxlength="160" placeholder="Enter your alert message here."></textarea>
-            <div class="sms-meta">
-              <span>0 / 160 characters</span>
-              <span style="float:right;">Single recipient</span>
-            </div>
-          </div>
-          <div class="sms-btn-bar">
-            <button class="sms-btn" type="submit">Send Now</button>
-            <button class="sms-btn sms-schedule" type="button">Schedule</button>
-          </div>
-        </form>
-      </div>
-    `;
+
+    // --- FIRST define smsRight ---
     const smsRight = `
       <div class="sms-right">
         <div class="sms-right-header">
@@ -42,55 +10,108 @@ document.addEventListener("DOMContentLoaded", function() {
           <button class="sms-viewall">View All</button>
         </div>
         <div class="sms-request-list">
+  
           <div class="sms-request">
             <div class="sms-r-row">
               <span class="sms-request-ph">+1-555-0101</span>
               <span class="sms-request-tag tag-sent">sent</span>
             </div>
-            <div style=" font-family: var(--font); font-size:0.98em; color:#2b3b52;">Flood warning for downtown area</div>
+            <div style="font-size:0.98em;color:#2b3b52;">Flood warning for downtown area</div>
             <div class="sms-r-row">
               <span class="sms-request-label">emergency</span>
               <span class="sms-request-time">2024-01-15 14:30</span>
             </div>
           </div>
+  
           <div class="sms-request">
             <div class="sms-r-row">
               <span class="sms-request-ph">+1-555-0102</span>
               <span class="sms-request-tag tag-pending">pending</span>
             </div>
-            <div style="font-family: var(--font); font-size:0.98em;color:#2b3b52;">Evacuation notice: wildfire spreading</div>
+            <div style="font-size:0.98em;color:#2b3b52;">Evacuation notice: wildfire spreading</div>
             <div class="sms-r-row">
               <span class="sms-request-label">emergency</span>
               <span class="sms-request-time">2024-01-15 14:25</span>
             </div>
           </div>
+  
           <div class="sms-request">
             <div class="sms-r-row">
               <span class="sms-request-ph">+1-555-0103</span>
               <span class="sms-request-tag tag-sent">sent</span>
             </div>
-            <div style="font-family: var(--font); font-size:0.98em;color:#2b3b52;">Weather alert: severe thunderstorm</div>
+            <div style="font-size:0.98em;color:#2b3b52;">Weather alert: severe thunderstorm</div>
             <div class="sms-r-row">
               <span class="sms-request-label tag-warn">warning</span>
               <span class="sms-request-time">2024-01-15 14:20</span>
             </div>
           </div>
+  
           <div class="sms-request">
             <div class="sms-r-row">
               <span class="sms-request-ph">+1-555-0104</span>
               <span class="sms-request-tag tag-failed">failed</span>
             </div>
-            <div style="font-family: var(--font); font-size:0.98em;color:#2b3b52;">Weather alert: flooding in downtown</div>
+            <div style="font-size:0.98em;color:#2b3b52;">Weather alert: flooding in downtown</div>
             <div class="sms-r-row">
               <span class="sms-request-label tag-emer">emergency</span>
               <span class="sms-request-time">2024-01-15 14:13</span>
             </div>
           </div>
+  
         </div>
       </div>
     `;
-    document.getElementById("main-content").innerHTML = `<div id="main-content-row">${smsLeft}${smsRight}</div>`;
+  
+    // --- NOW define smsLeft ---
+    const smsLeft = `
+      <div class="sms-left">
+        <div class="sms-section-title">Send SMS Alert</div>
+  
+        <form id="smsForm" autocomplete="off">
+          <div class="sms-bulk-row">
+            <span class="sms-bulk-label">Bulk Mode</span>
+            <input type="checkbox" class="sms-switch" />
+          </div>
+  
+          <div class="sms-row">
+            <label class="sms-label">Recipient</label>
+            <input type="text" class="sms-input" name="recipient" maxlength="15" placeholder="+1-555-0101">
+          </div>
+  
+          <div class="sms-row">
+            <label class="sms-label">Alert Type</label>
+            <select class="sms-select" name="alertType">
+              <option>Emergency Alert</option>
+              <option>Weather Warning</option>
+            </select>
+          </div>
+  
+          <div class="sms-row">
+            <label class="sms-label">Message Content</label>
+            <textarea class="sms-textarea" name="message" maxlength="160" placeholder="Enter your alert message here."></textarea>
+            <div class="sms-meta">
+              <span>0 / 160 characters</span>
+              <span style="float:right;">Single recipient</span>
+            </div>
+          </div>
+  
+          <div class="sms-btn-bar">
+            <button class="sms-btn" type="submit">Send Now</button>
+            <button class="sms-btn sms-schedule" type="button">Schedule</button>
+          </div>
+        </form>
+      </div>
+    `;
+  
+    // --- RENDER BOTH PANELS ---
+    document.getElementById("main-content").innerHTML =
+      `<div id="main-content-row">${smsLeft}${smsRight}</div>`;
+  
+    // --- IMPORTANT: Attach handler *after* rendering ---
+    attachSMSFormHandler();
   }
+  
 
   // --- Phone Requests Panel ---
   function renderPhonePanel() {
@@ -662,4 +683,40 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".dashboard-tab-link").forEach(btn => {
     btn.addEventListener("click", function () { switchTab(this); });
   });
+
+  function attachSMSFormHandler() {
+    const form = document.querySelector("#smsForm");
+    if (!form) return;
+  
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+  
+      const recipient = form.recipient.value.trim();
+      const message = form.message.value.trim();
+  
+      if (!recipient || !message) {
+        alert("Please fill in both the recipient and message.");
+        return;
+      }
+  
+      try {
+        const res = await fetch("http://localhost:3000/send-sms", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ recipient, message })
+        });
+  
+        const data = await res.json();
+  
+        if (data.success) {
+          alert("SMS sent successfully!");
+        } else {
+          alert("Error sending SMS: " + data.error);
+        }
+      } catch (err) {
+        alert("Failed to reach server: " + err.message);
+      }
+    });
+  }
+  
 });
